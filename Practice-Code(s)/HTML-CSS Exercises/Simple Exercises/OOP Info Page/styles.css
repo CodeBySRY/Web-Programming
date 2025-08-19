@@ -1,0 +1,124 @@
+/* ==============================
+   General Page Styling
+================================*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ==============================
+   Heading
+================================*/
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+/* ==============================
+   OOP Four Pillars Section
+================================*/
+dl {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+dl dt {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+dl dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* ==============================
+   Wikipedia-style Layout
+================================*/
+p {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+    text-align: justify;
+}
+
+/* Float the image to the right like Wikipedia */
+img {
+    float: right;
+    margin: 10px 0 10px 20px; /* Top, Right, Bottom, Left spacing */
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ==============================
+   Code Block Styling
+================================*/
+pre {
+    background: #1e1e1e; /* Dark theme */
+    color: #dcdcdc;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    max-width: 900px;
+    margin: 20px auto;
+    font-size: 14px;
+}
+
+code {
+    font-family: Consolas, "Courier New", monospace;
+}
+
+/* ==============================
+   Resource Links
+================================*/
+ul {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    list-style-type: square;
+}
+
+ul li {
+    margin: 8px 0;
+}
+
+ul a {
+    text-decoration: none;
+    color: #0077cc;
+}
+
+ul a:hover {
+    text-decoration: underline;
+}
+
+/* ==============================
+   Contact Link
+================================*/
+center a {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #0077cc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+center a:hover {
+    background: #005fa3;
+}

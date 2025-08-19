@@ -1,0 +1,1 @@
+This folder contains exercises related to Javascript, containing practice codes, and more.

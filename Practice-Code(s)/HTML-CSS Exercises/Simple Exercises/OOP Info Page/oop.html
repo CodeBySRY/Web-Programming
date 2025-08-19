@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Programming</title>
+</head>
+<body>
+
+    <h1>
+        <img src = "image.png" alt = "OOP"/>
+        <hr> Object Oriented Programming
+        <hr>
+    </h1>
+
+    <a href = "">Courses</a>
+    <a href = "">Tutorials</a>
+    <a href = "">Examples</a>
+
+    <br>
+
+    <dl>
+        <dt><b> Abstraction </b></dt>
+        <dd>
+            The process of hiding internal implementation details and showing only the necessary features
+            of an object, typically achieved using abstract classes or interfaces.
+        </dd>
+
+        <dt><b> Encapsulation </b></dt>
+        <dd>
+            The bundling of data (attributes) and methods (functions) that operate on the data into a
+            single unit (class), while restricting direct access to some of the object’s components using access
+            modifiers (e.g., private, protected).
+        </dd>
+
+        <dt><b> Inheritance </b></dt>
+        <dd>
+            A mechanism where a new class (subclass/child) derives properties and behavior (fields and
+            methods) from an existing class (superclass/parent), promoting code reuse and hierarchical
+            classification.
+        </dd>
+
+        <dt><b> Polymorphism </b></dt>
+        <dd>
+            The ability of different classes to be treated through a common interface, typically enabled by
+            method overriding (runtime polymorphism) or method overloading (compile-time polymorphism),
+            allowing a single function to behave differently based on the object.
+        </dd>
+    </dl>
+
+    <p> You can check out the following resources for better learning: </p>
+    <ul>
+        <li>
+            <a target="_blank" href="https://www.w3schools.com/cpp/cpp_oop.asp"> W3Schools </a>
+        </li>
+        <li>
+            <a target="_blank" href="https://www.geeksforgeeks.org/dsa/introduction-of-objectoriented-programming/">
+                GeeksForGeeks
+            </a>
+        </li>
+    </ul>
+
+    <p>You have learned how to structure your programs by decomposing tasks into functions. This is an excellent practice, but experience shows that it does not go far 
+enough. As programs get larger, it becomes increasingly difficult to maintain a large 
+collection of functions. <br>
+To overcome this problem, computer scientists invented object-oriented programming, a programming style in which tasks are solved by collaborating objects. 
+Each object has its own set of data, together with a set of functions that can act upon the data. (These functions are called member functions). <br>
+You have already experienced the object-oriented programming style when you used string objects or streams such as cin and cout. For example, you use the length and substr member functions to work with string objects. The >> and << operators that 
+you use with streams are also implemented as member functions. </p>
+
+    <pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+// 2D coordinate class
+class Coord {
+public:
+    int x, y;
+    
+    Coord(int xVal, int yVal) : x(xVal), y(yVal) {}  // Constructor
+    
+    Coord operator+(const Coord& other) const {  // Overload + for coordinate addition
+        return Coord(x + other.x, y + other.y);
+    }
+};
+
+// Abstract base class for geometric objects
+class GeoObj {
+public:
+    virtual void move(Coord) = 0;  // Pure virtual - must be implemented
+    virtual void draw() const = 0; // Pure virtual - must be implemented
+    virtual ~GeoObj() = default;   // Virtual destructor for proper cleanup
+};
+
+// Circle class inherits from GeoObj
+class Circle : public GeoObj {
+private:
+    Coord center;  // Center coordinates
+    int rad;       // Radius
+    
+public:
+    Circle(Coord c, int r) : center(c), rad(r) {}  // Constructor
+    
+    void move(Coord c) override {  // Move circle by offset
+        center = center + c;
+    }
+    
+    void draw() const override {  // Draw circle implementation
+        cout << "Drawing Circle at (" << center.x << "," << center.y 
+             << ") with radius " << rad << endl;
+    }
+};
+
+// Line class inherits from GeoObj
+class Line : public GeoObj {
+private:
+    Coord from, to;  // Start and end points
+    
+public:
+    Line(Coord f, Coord t) : from(f), to(t) {}  // Constructor
+    
+    void move(Coord c) override {  // Move line by offset
+        from = from + c;
+        to = to + c;
+    }
+    
+    void draw() const override {  // Draw line implementation
+        cout << "Drawing Line from (" << from.x << "," << from.y 
+             << ") to (" << to.x << "," << to.y << ")" << endl;
+    }
+};
+
+// Creates a vector of geometric objects
+vector&lt;GeoObj*&gt; createFig() {
+    vector&lt;GeoObj*&gt; f;
+    f.push_back(new Line{Coord{1,2}, Coord{3,4}});  // Heap-allocated Line
+    f.push_back(new Circle{Coord{5,5}, 2});         // Heap-allocated Circle
+    return f;
+}
+
+// Draws all elements in vector
+void drawElems(const vector&lt;GeoObj*&gt;& v) {
+    for (GeoObj* gp : v) {
+        gp->draw();  // Polymorphic call
+    }
+}
+
+int main() {
+    vector&lt;GeoObj*&gt; fig = createFig();  // Create figures
+    drawElems(fig);                    // Draw all figures
+    
+    // Clean up memory
+    for (GeoObj* & geoPtr : fig) {
+        delete geoPtr;     // Free memory
+        geoPtr = nullptr;  // Nullify pointer
+    }
+    /*geoPtr is a reference to a pointer (GeoObj* &), meaning we can modify the actual pointer stored in the vector.
+    delete geoPtr deallocates the memory on the heap that geoPtr points to, ensuring no memory leaks.
+    geoPtr = nullptr; //  basically helps prevent dangling pointers (undefined behavior).
+    */ 
+    fig.clear();  // Clear vector
+    
+    return 0;
+}
+    </code></pre>
+
+    <center>
+        <a href="mailto:shayan.yazdanie@gmail.com?subject=Contacting For Academic Help&body=Please help me with the following problem:">
+            <b> Contact Me! </b>
+        </a>
+    </center>
+
+</body>
+</html>

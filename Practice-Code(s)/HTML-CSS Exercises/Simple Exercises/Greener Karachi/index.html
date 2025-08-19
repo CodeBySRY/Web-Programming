@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+        }
+
+
+        .navbar {
+            display: flex; 
+            background-color: lightgreen;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .logo a {
+            font-weight: bolder;
+            color: darkgreen;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            
+        }
+
+        .menu a {
+            margin: 20px;
+            font-weight: bolder;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            color: darkgreen;
+            transition: 0.3s ease; /* smooth effect */
+
+        }
+
+        /* Hover effect for menu links */
+        .menu a:hover {
+            padding: 5px 10px;
+            color: white;                  /* text turns white */
+            background-color: darkgreen;   /* background turns dark green */
+            border-radius: 5px; 
+            
+        }
+
+        .btn button {
+            padding: 7.5px;
+            font-weight: bolder;
+            border-radius: 5px;
+            width: 120px;
+            background-color: darkgreen;
+            color: white;
+            transition: 0.3s ease;
+        }
+
+        .btn button:hover {
+            padding: 8px;
+            color: black;
+            background-color: lightgreen;
+
+        }
+
+        .container {
+            padding: 15px;
+            width: 100%;
+            height: 70vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            background: linear-gradient(rgba(0, 100, 0, 0.432), rgba(255, 255, 255, 0.445)), url(./banner2.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .banner {
+            text-align: center;
+            font-size: larger;
+            color: white;
+            text-shadow:
+                /* Hard outline */
+                -1px -1px 0 black,
+                1px -1px 0 black,
+                -1px  1px 0 black,
+                1px  1px 0 black,
+                0 0 5px black,
+                0 0 10px black,
+                0 0 15px black;
+        }
+
+
+
+        .request-btn {
+            padding: 7.5px;
+            font-weight: bolder;
+            border-radius: 5px;
+            width: 175px;
+            background-color: darkgreen;
+            color: white;
+            transition: 0.3s ease;
+        }
+
+
+        .request-btn:hover {
+            background-color: lightyellow;
+            color: brown;
+            padding: 8px;
+        }
+        .banner h2 {
+            margin: 10px;
+            font-size: 40px;
+        }
+
+        .banner h3 {
+            margin: 10px;
+        }
+
+        .banner p {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href=""> 
+                <h2> Greener Karachi </h2>
+             </a>
+
+        </div>
+        <div class="menu">
+            <a href=""> ABOUT US </a>
+            <a href=""> CONTACT US </a>
+            <a href=""> PROJECTS </a>
+        </div>
+
+        <div class="btn">
+            <button> Contact Us </button>
+        </div>
+
+        </div>
+
+        <div class="container">
+            <div class="banner">
+                <h2>Join the Greener Karachi Movement</h2>
+                <h3> <u> Student Activist and Environmentalist </u> </h3>
+                <p> I have opened a local tree transplantation business, located in the heart of Karachi.<br> We, as a team, offer fresh and organic saplings/plants to people so that they can plant them in their respective neighbourhoods/areas. <br> <b> Let's make Karachi green again! </b> </p>
+                <button class="request-btn">🌱 Request a Sapling</button>
+            </div>
+        </div>
+    
+</body>
+</html>

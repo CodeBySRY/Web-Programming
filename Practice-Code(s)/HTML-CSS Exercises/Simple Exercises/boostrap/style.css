@@ -1,0 +1,18 @@
+
+.navbar{
+background:red;
+}
+
+.nav-item a {
+        color: white;
+        text-align: end;    
+}
+
+.card img {
+    height: 30vh;
+}
+
+.card {
+    margin-top: 20px;
+    border-left: 3px solid red;
+}
